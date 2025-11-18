@@ -1,5 +1,5 @@
 // Alle Themen zusammenführen, um Mix-Modus zu ermöglichen
-const alleThemen = { thema1, thema2, thema3};
+const alleThemen = { thema1, thema2, thema3, thema4};
 alleThemen.mix = [].concat(...Object.values(alleThemen));
 
 let currentTopic = null;

@@ -1,0 +1,136 @@
+/* Grundlayout */
+body {
+  font-family: Arial, sans-serif;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Themenbuttons */
+.topics, .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.topic-btn {
+  padding: 15px 25px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.topic-btn:hover {
+  background: #2980b9;
+}
+
+/* Karteikartencontainer */
+.card-container { 
+  display: none; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* Kartenanzeige */
+.card-number {
+  font-weight: bold;
+  margin: 30px;
+}
+
+.card {
+  width: 350px;              
+  max-height: 250px;          
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: background 0.3s;
+
+  /* Scroll bei langen Texten */
+  overflow-y: auto;          
+  word-wrap: break-word;     
+}
+
+/* Frage/Antwort Farben */
+.card.frage { background-color: #d0e7ff; }
+.card.antwort { background-color: #d0ffd6; }
+
+/* Scrollbar optisch verbessern */
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+.card::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+.card::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Zahlennavigation */
+.number-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.number-nav .number-box {
+  width: 30px;
+  height: 30px;
+  background: #3498db;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.number-nav .number-box:hover {
+  background: #2980b9;
+}
+
+.number-nav .number-box.active {
+  background: #2ecc71;
+}
+
+
+@media (max-width: 300px) {
+  .card {
+    width: 90vw;          
+    max-height: 200px;    
+    font-size: 1em;
+  }
+
+  .number-nav {
+    flex-wrap: nowrap;           
+    overflow-x: auto;            
+    -webkit-overflow-scrolling: touch; 
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  .number-nav .number-box {
+    min-width: 35px;     
+    flex: 0 0 auto;      
+  }
+}
